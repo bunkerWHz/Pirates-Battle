@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcaucne5ubymj"]
+[gd_scene load_steps=23 format=3 uid="uid://bcaucne5ubymj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_2ilav"]
 [ext_resource type="Texture2D" uid="uid://bfnfeavwhrxfy" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_dbj00"]
@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://dgtjd8aya1g65" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="4_5hkjw"]
 [ext_resource type="Texture2D" uid="uid://b7jdshvrey0sq" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="5_1fc1u"]
 [ext_resource type="Texture2D" uid="uid://b8uvd14g67li3" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="6_enwpo"]
+[ext_resource type="Texture2D" uid="uid://pbrq23jfmtep" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="7_qlk63"]
+[ext_resource type="Texture2D" uid="uid://dympgygb0pcgi" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="8_1hqpg"]
+[ext_resource type="Texture2D" uid="uid://b6trgn4r1u074" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" id="9_pdrlg"]
+[ext_resource type="Texture2D" uid="uid://cy53shi48jve7" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" id="10_dftxj"]
+[ext_resource type="Texture2D" uid="uid://c8xdwr6eow4fn" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" id="11_qb6wj"]
+[ext_resource type="Texture2D" uid="uid://w34gxt51ljks" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" id="12_uj4ns"]
+[ext_resource type="Texture2D" uid="uid://cv3tfhdljc6ma" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="13_hhm40"]
+[ext_resource type="Texture2D" uid="uid://dgbh7dfoqoq7m" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="14_svjxc"]
+[ext_resource type="Texture2D" uid="uid://cjqmad0htdhrq" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="15_utm07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg7jg"]
 size = Vector2(20, 28)
@@ -43,10 +52,66 @@ tracks/0/keys = {
 "values": [ExtResource("2_dbj00"), ExtResource("3_snaio"), ExtResource("4_5hkjw"), ExtResource("5_1fc1u"), ExtResource("6_enwpo")]
 }
 
+[sub_resource type="Animation" id="Animation_4d0uq"]
+resource_name = "jump"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_dbj00"), ExtResource("7_qlk63"), ExtResource("8_1hqpg")]
+}
+
+[sub_resource type="Animation" id="Animation_w43px"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25, 0.35, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_pdrlg"), ExtResource("10_dftxj"), ExtResource("11_qb6wj"), ExtResource("12_uj4ns"), ExtResource("13_hhm40"), ExtResource("14_svjxc")]
+}
+
+[sub_resource type="Animation" id="Animation_reern"]
+resource_name = "fall"
+length = 0.1
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_utm07")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_51adu"]
 _data = {
 "RESET": SubResource("Animation_x54l8"),
-"idle": SubResource("Animation_hnk2b")
+"fall": SubResource("Animation_reern"),
+"idle": SubResource("Animation_hnk2b"),
+"jump": SubResource("Animation_4d0uq"),
+"run": SubResource("Animation_w43px")
 }
 
 [node name="Player" type="CharacterBody2D"]
