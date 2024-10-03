@@ -1,1 +1,4 @@
 res://test.tscn
+res://Scenes/WorldScenes/level1.tscn
+res://Scripts/Player/player.gd
+res://Scenes/Entities/player.tscn
