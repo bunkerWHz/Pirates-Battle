@@ -28,6 +28,16 @@ func _physics_process(delta: float) -> void:
 	if direction: 
 		velocity.x = speed * direction
 	else:
-		animation.play("idle")
 		velocity.x = move_toward(velocity.x, 0, speed)
+	update_animation()
 	move_and_slide()
+
+func update_animation()->void:
+	if velocity.x != 0:
+		animation.play("run")
+	else:
+		animation.play("idle")
+	if velocity.y < 0:
+		animation.play("jump")
+	if velocity.y > 0:
+		animation.play("fall")
