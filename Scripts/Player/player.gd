@@ -3,13 +3,13 @@ class_name Player
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var health_component: Control = $HealthComponent
+@onready var health_component: HealthComponent = $HealthComponent
 
 @export var speed : float = 200
 @export var jump_height : float = -300
 @export var damage: float = 1
 
-var max_health = 10
+var max_health = 20
 var current_health
 
 var direction
@@ -50,9 +50,10 @@ func update_animation()->void:
 	if velocity.y > 0:
 		animation.play("fall")
 		
-func take_damage(damage: float)->void:
-	current_health -= damage
-	health_component.show_damage_label(-damage)
+func take_damage(taken_damage)->void:
+	current_health -= taken_damage
+	health_component.show_damage_label(-taken_damage)
+	health_component.update_health(current_health)
 
-func _on_hurt_box_area_entered(area: Area2D) -> void:
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	pass
