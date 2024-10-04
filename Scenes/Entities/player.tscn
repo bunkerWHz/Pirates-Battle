@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bcaucne5ubymj"]
+[gd_scene load_steps=26 format=3 uid="uid://bcaucne5ubymj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_2ilav"]
 [ext_resource type="Texture2D" uid="uid://bfnfeavwhrxfy" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_dbj00"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cv3tfhdljc6ma" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="13_hhm40"]
 [ext_resource type="Texture2D" uid="uid://dgbh7dfoqoq7m" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="14_svjxc"]
 [ext_resource type="Texture2D" uid="uid://cjqmad0htdhrq" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="15_utm07"]
+[ext_resource type="Script" path="res://Scenes/Components/health_component.gd" id="16_k01cx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg7jg"]
 size = Vector2(20, 28)
@@ -32,6 +33,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_dbj00")]
+}
+
+[sub_resource type="Animation" id="Animation_reern"]
+resource_name = "fall"
+length = 0.1
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_utm07")]
 }
 
 [sub_resource type="Animation" id="Animation_hnk2b"]
@@ -87,24 +106,6 @@ tracks/0/keys = {
 "values": [ExtResource("9_pdrlg"), ExtResource("10_dftxj"), ExtResource("11_qb6wj"), ExtResource("12_uj4ns"), ExtResource("13_hhm40"), ExtResource("14_svjxc")]
 }
 
-[sub_resource type="Animation" id="Animation_reern"]
-resource_name = "fall"
-length = 0.1
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_utm07")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_51adu"]
 _data = {
 "RESET": SubResource("Animation_x54l8"),
@@ -113,6 +114,11 @@ _data = {
 "jump": SubResource("Animation_4d0uq"),
 "run": SubResource("Animation_w43px")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mgjc"]
+size = Vector2(20, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kd4"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(333, 332)
@@ -130,3 +136,27 @@ libraries = {
 "": SubResource("AnimationLibrary_51adu")
 }
 autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_5mgjc")
+debug_color = Color(0.164743, 0.639167, 0.236655, 0.42)
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_w7kd4")
+
+[node name="HealthComponent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_k01cx")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

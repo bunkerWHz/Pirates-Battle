@@ -1,4 +1,10 @@
-res://test.tscn
 res://Scenes/WorldScenes/level1.tscn
-res://Scripts/Player/player.gd
 res://Scenes/Entities/player.tscn
+res://Scenes/interactable/checkpoint.tscn
+res://Scenes/WorldScenes/camera_controller.gd
+res://addons/panku_console/res/panku_console_theme.tres
+res://Scenes/Components/health_component.tscn
+res://Scenes/Components/health_component.gd
+res://Scripts/Player/player.gd
+res://Scenes/interactable/spikes.gd
+res://Scenes/interactable/spikes.tscn

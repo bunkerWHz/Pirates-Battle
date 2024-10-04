@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcnryb4ignyi1"]
+
+[ext_resource type="Texture2D" uid="uid://d2jw6514ntt7m" path="res://assets/generated/totem.png" id="1_vo0hr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqhe3"]
+size = Vector2(184, 326)
+
+[node name="Checkpoint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vo0hr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_bqhe3")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-16, -60)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(21, -59)

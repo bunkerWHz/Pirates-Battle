@@ -3,13 +3,21 @@ class_name Player
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var health_component: Control = $HealthComponent
 
 @export var speed : float = 200
 @export var jump_height : float = -300
+@export var damage: float = 1
+
+var max_health = 10
+var current_health
 
 var direction
 		
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready() -> void:
+	current_health = max_health
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("left","right")
@@ -41,3 +49,10 @@ func update_animation()->void:
 		animation.play("jump")
 	if velocity.y > 0:
 		animation.play("fall")
+		
+func take_damage(damage: float)->void:
+	current_health -= damage
+	health_component.show_damage_label(-damage)
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	pass
