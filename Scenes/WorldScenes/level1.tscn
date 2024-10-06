@@ -436,4 +436,10 @@ tile_set = SubResource("TileSet_bxvbu")
 position = Vector2(333, 372)
 
 [node name="Spikes" parent="." instance=ExtResource("6_xo283")]
-position = Vector2(397, 367)
+position = Vector2(397, 368)
+
+[node name="Spikes3" parent="." instance=ExtResource("6_xo283")]
+position = Vector2(264, 368)
+
+[node name="Spikes2" parent="." instance=ExtResource("6_xo283")]
+position = Vector2(789, 400)
