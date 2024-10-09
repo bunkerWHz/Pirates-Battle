@@ -1,3 +1,5 @@
+HitBox
+HurtBox
 HealthComponent
 Node2D
 ProgressBar
@@ -10,5 +12,3 @@ Control
 Camera2D
 Parallax2D
 PointLight2D
-Line2D
-TileMapLayer

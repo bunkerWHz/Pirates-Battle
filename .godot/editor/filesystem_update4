@@ -1,2 +1,10 @@
 res://Scenes/WorldScenes/level1.tscn
 res://addons/panku_console/res/panku_console_theme.tres
+res://Scenes/Entities/player.tscn
+res://Scenes/interactable/checkpoint.tscn
+res://Scenes/Components/health_component.tscn
+res://Scenes/interactable/spikes.tscn
+res://Scenes/Components/hit_box.gd
+res://Scenes/Components/hurt_box.gd
+res://Scenes/Components/health_component.gd
+res://Scenes/interactable/spikes.gd

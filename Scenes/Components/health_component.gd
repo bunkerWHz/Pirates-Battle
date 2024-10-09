@@ -1,8 +1,6 @@
 extends ProgressBar
 class_name HealthComponent
 
-@onready var damage: float = owner.damage
-
 @onready var max_health : float = owner.max_health
 var current_health
 

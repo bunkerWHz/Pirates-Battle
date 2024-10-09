@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728230245
+::res://::1728491022
 icon.svg::CompressedTexture2D::8340820994518941163::1727939772::1727939781::1::::<><>::
 README.md::TextFile::-1::1727940142::0::1::::<><>::
 test.tscn::PackedScene::8662718910088780350::1727946670::0::1::::<><>::uid://dq3mdrjaqyoyd::::res://icon.svg
@@ -178,9 +178,9 @@ texture_viewer.tscn::PackedScene::7750132616475338843::1728033211::0::1::::<><>:
 ::res://addons/panku_console/modules/variable_tracker/::1728033211
 module.gd::GDScript::-1::1728033211::0::1::::PankuModuleVariableTracker<>PankuModule<>::
 opt.gd::GDScript::-1::1728033211::0::1::::<>ModuleOptions<>::
-::res://addons/panku_console/res/::1728033326
+::res://addons/panku_console/res/::1728230413
 green_gradient_1d.tres::Gradient::949485305027433995::1728033211::0::1::::<><>::
-panku_console_theme.tres::Theme::3144029756148019014::1728033326::0::1::::<><>::
+panku_console_theme.tres::Theme::3144029756148019014::1728230413::0::1::::<><>::
 ::res://addons/panku_console/res/effect/::1728033292
 square_shadow.png::CompressedTexture2D::8669949328537749897::1728033211::1728033291::1::::<><>::
 ::res://addons/panku_console/res/icons2/::1728033292
@@ -2596,9 +2596,9 @@ player.tscn::PackedScene::2528016972784931337::1728080964::0::1::::<><>::res://S
 checkpoint.tscn::PackedScene::2554710427397408914::1728080964::0::1::::<><>::uid://d2jw6514ntt7m::::res://assets/generated/totem.png
 spikes.gd::GDScript::-1::1728080737::0::1::::<>Node2D<>::
 spikes.tscn::PackedScene::4797174250734886034::1728080964::0::1::::<><>::uid://5mrh76n1thxs::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png<>res://Scenes/interactable/spikes.gd
-::res://Scenes/WorldScenes/::1728080964
+::res://Scenes/WorldScenes/::1728230413
 camera_controller.gd::GDScript::-1::1728031483::0::1::::<>Node2D<>::
-level1.tscn::PackedScene::161024174338161413::1728080964::0::1::::<><>::uid://bnrp7dw6cm48q::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png<>uid://bcaucne5ubymj::::res://Scenes/Entities/player.tscn<>uid://c256el4oh15fh::::res://assets/Parallax/2.png<>uid://ca5gran7y0kfs::::res://assets/Parallax/3.png<>uid://beljp71bxrs4y::::res://assets/Parallax/1.png<>uid://cal102pca2usg::::res://Scenes/interactable/spikes.tscn
+level1.tscn::PackedScene::161024174338161413::1728230413::0::1::::<><>::uid://bnrp7dw6cm48q::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png<>uid://bcaucne5ubymj::::res://Scenes/Entities/player.tscn<>uid://c256el4oh15fh::::res://assets/Parallax/2.png<>uid://ca5gran7y0kfs::::res://assets/Parallax/3.png<>uid://beljp71bxrs4y::::res://assets/Parallax/1.png<>uid://cal102pca2usg::::res://Scenes/interactable/spikes.tscn
 ::res://Scripts/::1727947331
 ::res://Scripts/Player/::1728080960
 player.gd::GDScript::-1::1728080960::0::1::::Player<>CharacterBody2D<>::
