@@ -13,6 +13,8 @@ class_name Player
 var max_health = 20
 var current_health
 
+var object: Area2D
+
 var direction
 		
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,7 +24,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("left","right")
-	
+	if Input.is_action_just_pressed("interact"):
+		interact()
 	if Input.is_action_just_pressed("left"):
 		sprite.scale.x = abs(sprite.scale.x) * -1
 		hit_box.position.x = abs(hit_box.position.x) * -1
@@ -40,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = speed * direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		
 	update_animation()
 	move_and_slide()
 
@@ -56,5 +60,21 @@ func update_animation()->void:
 func take_damage(taken_damage) -> void:
 	health_component.take_damage(taken_damage)
 
-func _on_hurt_box_area_entered(_area: Area2D) -> void:
-	pass
+#func _on_hurt_box_area_entered(_area: Area2D) -> void:
+	#pass
+
+func interact() -> void:
+	if object != null:
+		object.owner.interact()
+	
+func _on_interactable_area_area_entered(area: Area2D) -> void:
+	if area.owner.has_method("interact"):
+		object = area
+
+func _on_interactable_area_area_exited(_area: Area2D) -> void:
+	object = null
+
+func respawn() -> void:
+	if GM.current_checkpoint != null:
+		position = GM.current_checkpoint.global_position
+	

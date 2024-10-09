@@ -9,3 +9,5 @@ res://Scenes/Components/hurt_box.gd
 res://Scenes/Components/health_component.gd
 res://Scenes/interactable/spikes.gd
 res://Scripts/Player/player.gd
+res://Scenes/interactable/checkpoint.gd
+res://Scripts/GM.gd

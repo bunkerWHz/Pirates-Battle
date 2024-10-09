@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bcaucne5ubymj"]
+[gd_scene load_steps=29 format=3 uid="uid://bcaucne5ubymj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_2ilav"]
 [ext_resource type="Texture2D" uid="uid://bfnfeavwhrxfy" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_dbj00"]
@@ -122,6 +122,9 @@ _data = {
 "run": SubResource("Animation_w43px")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3fpp"]
+size = Vector2(30, 28)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(333, 332)
 collision_layer = 8
@@ -132,10 +135,12 @@ script = ExtResource("1_2ilav")
 texture = ExtResource("2_dbj00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_kg7jg")
 
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 position = Vector2(20, 2)
 collision_layer = 20
 collision_mask = 0
@@ -146,6 +151,7 @@ script = ExtResource("3_1owir")
 shape = SubResource("RectangleShape2D_w7kd4")
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 8
 monitorable = false
@@ -168,3 +174,15 @@ autoplay = "idle"
 offset_right = 4.0
 offset_bottom = 27.0
 script = ExtResource("16_k01cx")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_i3fpp")
+debug_color = Color(0.376146, 0.619485, 1, 0.42)
+
+[connection signal="area_entered" from="InteractableArea" to="." method="_on_interactable_area_area_entered"]
+[connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]

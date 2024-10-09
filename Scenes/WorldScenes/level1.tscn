@@ -443,7 +443,11 @@ position = Vector2(264, 368)
 position = Vector2(789, 400)
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_8soj4")]
-position = Vector2(528, 352)
+position = Vector2(83, 314)
+spawn_point = true
+
+[node name="Checkpoint2" parent="." instance=ExtResource("7_8soj4")]
+position = Vector2(507, 314)
 
 [node name="Player" parent="." instance=ExtResource("2_bvcvr")]
 position = Vector2(333, 372)
