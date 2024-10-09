@@ -4,6 +4,7 @@ class_name Player
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var hit_box: HitBox = $HitBox
 
 @export var speed : float = 200
 @export var jump_height : float = -300
@@ -24,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("left"):
 		sprite.scale.x = abs(sprite.scale.x) * -1
+		hit_box.position.x = abs(hit_box.position.x) * -1
 	if Input.is_action_just_pressed("right"):
 		sprite.scale.x = abs(sprite.scale.x) * 1
+		hit_box.position.x = abs(hit_box.position.x) * 1
 		
 	if not is_on_floor():
 		velocity.y += gravity * delta
