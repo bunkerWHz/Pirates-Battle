@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cal102pca2usg"]
+[gd_scene load_steps=6 format=3 uid="uid://cal102pca2usg"]
 
 [ext_resource type="Texture2D" uid="uid://5mrh76n1thxs" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="1_a4xes"]
 [ext_resource type="Script" path="res://Scenes/interactable/spikes.gd" id="1_yjh7m"]
 [ext_resource type="Script" path="res://Scenes/Components/hit_box.gd" id="3_mmegp"]
+[ext_resource type="Script" path="res://Scenes/Components/hurt_box.gd" id="4_yorcn"]
+[ext_resource type="Script" path="res://Scenes/Components/health_component.gd" id="5_xbxwx"]
 
 [node name="Spikes" type="Node2D"]
 script = ExtResource("1_yjh7m")
@@ -18,3 +20,16 @@ script = ExtResource("3_mmegp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
 polygon = PackedVector2Array(-16, 8, -5, 0, 4, 2, 12, 0, 15, 5, 15, 16, -16, 16)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("4_yorcn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(-16, 8, -5, 0, 4, 2, 12, 0, 15, 5, 15, 16, -16, 16)
+
+[node name="HealthComponent" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("5_xbxwx")

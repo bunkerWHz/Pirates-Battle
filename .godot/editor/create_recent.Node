@@ -1,6 +1,6 @@
-HitBox
-HurtBox
 HealthComponent
+HurtBox
+HitBox
 Node2D
 ProgressBar
 CollisionShape2D
