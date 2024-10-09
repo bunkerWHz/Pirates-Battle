@@ -50,10 +50,8 @@ func update_animation()->void:
 	if velocity.y > 0:
 		animation.play("fall")
 		
-func take_damage(taken_damage)->void:
-	current_health -= taken_damage
-	health_component.show_damage_label(-taken_damage)
-	health_component.update_health(current_health)
+func take_damage(taken_damage) -> void:
+	health_component.take_damage(taken_damage)
 
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	pass

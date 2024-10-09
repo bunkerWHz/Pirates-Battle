@@ -3,6 +3,9 @@ extends Area2D
 
 @onready var damage: float = owner.damage
 
+func _ready() -> void:
+	monitoring = false
+
 func set_damage(value: float) -> void:
 	damage = value
 	

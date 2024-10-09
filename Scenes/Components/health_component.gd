@@ -39,6 +39,7 @@ func _get_label_color(taken_damage)-> Color:
 func _do_label_tween(label, endPosition):
 	var duration = 1
 	var tween = get_tree().create_tween()
+	tween.bind_node(self)
 	tween.tween_property(label, "position", endPosition, duration)
 	await get_tree().create_timer(duration).timeout
 	label.queue_free()
@@ -47,3 +48,10 @@ func update_health(new_value):
 	current_health = new_value
 	value = current_health
 	
+	
+func take_damage(taken_damage) -> void:
+	current_health -= taken_damage
+	show_damage_label(-taken_damage)
+	update_health(current_health)
+	if current_health <= 0 and owner is not Player:
+		owner.queue_free()
