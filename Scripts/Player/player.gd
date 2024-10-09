@@ -8,7 +8,7 @@ class_name Player
 
 @export var speed : float = 200
 @export var jump_height : float = -300
-@export var damage: float = 1
+@export var damage: float = 10
 
 var max_health = 20
 var current_health

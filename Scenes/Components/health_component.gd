@@ -3,7 +3,7 @@ class_name HealthComponent
 
 @onready var max_health : float = owner.max_health
 var current_health
-
+@export var hit_system : bool = false
 @export var damage_health_label : bool = true
 
 func _ready() -> void:
@@ -50,6 +50,8 @@ func update_health(new_value):
 	
 	
 func take_damage(taken_damage) -> void:
+	if hit_system:
+		taken_damage = 1
 	current_health -= taken_damage
 	show_damage_label(-taken_damage)
 	update_health(current_health)
