@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728498719
+::res://::1728646120
 icon.svg::CompressedTexture2D::8340820994518941163::1727939772::1727939781::1::::<><>::
 README.md::TextFile::-1::1727940142::0::1::::<><>::
 test.tscn::PackedScene::8662718910088780350::1727946670::0::1::::<><>::uid://dq3mdrjaqyoyd::::res://icon.svg
@@ -229,7 +229,7 @@ totem.png::CompressedTexture2D::9074332979745818144::1727984232::1727984237::1::
 2.png::CompressedTexture2D::6731761471388936425::1728028753::1728028758::1::::<><>::
 3.png::CompressedTexture2D::4835167382030434796::1728028753::1728028758::1::::<><>::
 4.png::CompressedTexture2D::4076923092132231818::1728028753::1728028759::1::::<><>::
-::res://assets/particles/::1728503704
+::res://assets/particles/::1728503709
 circle_05.png::CompressedTexture2D::1417433896881022869::1728503704::1728503709::1::::<><>::
 ::res://assets/Pirate Bomb/::1727941027
 ::res://assets/Pirate Bomb/Aseprite Files/::1727941027
@@ -2589,21 +2589,22 @@ Yellow Button (guide).png::CompressedTexture2D::2046743494480492449::1727940895:
 16.png::CompressedTexture2D::8211820062379921624::1727940895::1727940906::1::::<><>::
 Yellow Paper (guide).png::CompressedTexture2D::2780966726918952965::1727940895::1727940906::1::::<><>::
 ::res://Scenes/::1728068186
-::res://Scenes/Components/::1728502990
+::res://Scenes/Components/::1728556176
 health_component.gd::GDScript::-1::1728502939::0::1::::HealthComponent<>ProgressBar<>::
-health_component.tscn::PackedScene::5596837269059671261::1728502990::0::1::::<><>::res://Scenes/Components/health_component.gd
+health_component.tscn::PackedScene::5596837269059671261::1728556176::0::1::::<><>::res://Scenes/Components/health_component.gd
 hit_box.gd::GDScript::-1::1728499946::0::1::::HitBox<>Area2D<>::
 hurt_box.gd::GDScript::-1::1728499965::0::1::::HurtBox<>Area2D<>::
-::res://Scenes/Entities/::1728502990
-player.tscn::PackedScene::2528016972784931337::1728502990::0::1::::<><>::res://Scripts/Player/player.gd<>uid://bfnfeavwhrxfy::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png<>res://Scenes/Components/hit_box.gd<>uid://uiimtlnvtws5::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png<>uid://dgtjd8aya1g65::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png<>res://Scenes/Components/hurt_box.gd<>uid://b7jdshvrey0sq::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png<>uid://b8uvd14g67li3::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png<>uid://pbrq23jfmtep::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png<>uid://dympgygb0pcgi::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png<>uid://b6trgn4r1u074::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png<>uid://cy53shi48jve7::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png<>uid://c8xdwr6eow4fn::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png<>uid://w34gxt51ljks::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png<>uid://cv3tfhdljc6ma::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png<>uid://dgbh7dfoqoq7m::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png<>uid://cjqmad0htdhrq::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png<>res://Scenes/Components/health_component.gd
-::res://Scenes/interactable/::1728503506
-checkpoint.tscn::PackedScene::2554710427397408914::1728503506::0::1::::<><>::res://Scenes/interactable/checkpoint.gd<>uid://d2jw6514ntt7m::::res://assets/generated/totem.png
-checkpoint.gd::GDScript::-1::1728503506::0::1::::<>Node2D<>::
+::res://Scenes/Entities/::1728556176
+player.tscn::PackedScene::2528016972784931337::1728556176::0::1::::<><>::res://Scripts/Player/player.gd<>uid://bfnfeavwhrxfy::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png<>res://Scenes/Components/hit_box.gd<>uid://uiimtlnvtws5::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png<>uid://dgtjd8aya1g65::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png<>res://Scenes/Components/hurt_box.gd<>uid://b7jdshvrey0sq::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png<>uid://b8uvd14g67li3::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png<>uid://pbrq23jfmtep::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png<>uid://dympgygb0pcgi::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png<>uid://b6trgn4r1u074::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png<>uid://cy53shi48jve7::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png<>uid://c8xdwr6eow4fn::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png<>uid://w34gxt51ljks::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png<>uid://cv3tfhdljc6ma::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png<>uid://dgbh7dfoqoq7m::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png<>uid://cjqmad0htdhrq::::res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png<>res://Scenes/Components/health_component.gd
+::res://Scenes/interactable/::1728556176
+checkpoint.gd::GDScript::-1::1728509099::0::1::::Checkpoint<>Node2D<>::
+checkpoint.tscn::PackedScene::2554710427397408914::1728556176::0::1::::<><>::res://Scenes/interactable/checkpoint.gd<>uid://d2jw6514ntt7m::::res://assets/generated/totem.png<>uid://ugu6ue7wcc58::::res://assets/particles/circle_05.png
 spikes.gd::GDScript::-1::1728500774::0::1::::<>Node2D<>::
-spikes.tscn::PackedScene::4797174250734886034::1728503035::0::1::::<><>::uid://5mrh76n1thxs::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png<>res://Scenes/interactable/spikes.gd<>res://Scenes/Components/hit_box.gd<>res://Scenes/Components/hurt_box.gd<>res://Scenes/Components/health_component.gd
-::res://Scenes/WorldScenes/::1728502990
+spikes.tscn::PackedScene::4797174250734886034::1728556176::0::1::::<><>::uid://5mrh76n1thxs::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png<>res://Scenes/interactable/spikes.gd<>res://Scenes/Components/hit_box.gd<>res://Scenes/Components/hurt_box.gd<>res://Scenes/Components/health_component.gd
+::res://Scenes/WorldScenes/::1728556176
 camera_controller.gd::GDScript::-1::1728031483::0::1::::<>Node2D<>::
-level1.tscn::PackedScene::161024174338161413::1728502990::0::1::::<><>::uid://bnrp7dw6cm48q::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png<>uid://bcaucne5ubymj::::res://Scenes/Entities/player.tscn<>uid://c256el4oh15fh::::res://assets/Parallax/2.png<>uid://ca5gran7y0kfs::::res://assets/Parallax/3.png<>uid://beljp71bxrs4y::::res://assets/Parallax/1.png<>uid://cal102pca2usg::::res://Scenes/interactable/spikes.tscn<>uid://bcnryb4ignyi1::::res://Scenes/interactable/checkpoint.tscn
-::res://Scripts/::1727947331
-::res://Scripts/Player/::1728502967
-player.gd::GDScript::-1::1728502967::0::1::::Player<>CharacterBody2D<>::
+level1.tscn::PackedScene::161024174338161413::1728556176::0::1::::<><>::uid://bnrp7dw6cm48q::::res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png<>uid://bcaucne5ubymj::::res://Scenes/Entities/player.tscn<>uid://c256el4oh15fh::::res://assets/Parallax/2.png<>uid://ca5gran7y0kfs::::res://assets/Parallax/3.png<>uid://beljp71bxrs4y::::res://assets/Parallax/1.png<>uid://cal102pca2usg::::res://Scenes/interactable/spikes.tscn<>uid://bcnryb4ignyi1::::res://Scenes/interactable/checkpoint.tscn
+::res://Scripts/::1728508257
+GM.gd::GDScript::-1::1728508257::0::1::::<>Node<>::
+::res://Scripts/Player/::1728508431
+player.gd::GDScript::-1::1728508431::0::1::::Player<>CharacterBody2D<>::

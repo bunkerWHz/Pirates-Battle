@@ -1,0 +1,109 @@
+[gd_scene load_steps=17 format=3 uid="uid://cv0nt06vy83n6"]
+
+[ext_resource type="Texture2D" uid="uid://bbm3ocf8hou84" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="1_eiyxn"]
+[ext_resource type="Script" path="res://Scenes/Enemies/cannon_ball.gd" id="1_ioaet"]
+[ext_resource type="Script" path="res://Scenes/Components/hit_box.gd" id="2_wt5r8"]
+[ext_resource type="Texture2D" uid="uid://cd5e6td5xc5hu" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="3_wcvdr"]
+[ext_resource type="Texture2D" uid="uid://b88x51vt24ool" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="4_2pyoe"]
+[ext_resource type="Texture2D" uid="uid://42hg11qyjcrj" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/2.png" id="5_vopmt"]
+[ext_resource type="Texture2D" uid="uid://oayjhee54ucr" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/3.png" id="6_ax2d3"]
+[ext_resource type="Texture2D" uid="uid://dyu1osnhmmbjl" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/4.png" id="7_876bc"]
+[ext_resource type="Texture2D" uid="uid://c8ld8ycvk2faq" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/5.png" id="8_kyu7c"]
+[ext_resource type="Texture2D" uid="uid://djtre18t0vg3e" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="9_vsaq8"]
+[ext_resource type="Script" path="res://Scenes/Components/hurt_box.gd" id="11_xnkor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdr8a"]
+radius = 7.58797
+
+[sub_resource type="Animation" id="Animation_0ihpg"]
+resource_name = "hit"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_wcvdr"), ExtResource("4_2pyoe"), ExtResource("5_vopmt"), ExtResource("6_ax2d3"), ExtResource("7_876bc"), ExtResource("8_kyu7c"), ExtResource("9_vsaq8"), ExtResource("1_eiyxn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nghxv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dnnm"]
+_data = {
+"RESET": SubResource("Animation_nghxv"),
+"hit": SubResource("Animation_0ihpg")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4c2m"]
+radius = 8.0
+
+[node name="CannonBall" type="Node2D"]
+script = ExtResource("1_ioaet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_wcvdr")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_wt5r8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-0.56123, 0.448984)
+shape = SubResource("CircleShape2D_pdr8a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3dnnm")
+}
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("11_xnkor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_x4c2m")

@@ -32,7 +32,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("right"):
 		sprite.scale.x = abs(sprite.scale.x) * 1
 		hit_box.position.x = abs(hit_box.position.x) * 1
-		
+	if Input.is_action_just_pressed("down") and is_on_floor():
+		position.y += 5
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		

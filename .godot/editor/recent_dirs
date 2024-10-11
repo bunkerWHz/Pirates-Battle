@@ -1,7 +1,9 @@
+res://Scenes/Enemies
+res://Scripts/Enemies
+res://Scenes/WorldScenes
 res://Scripts
 res://Scenes/interactable
 res://Scenes/Components
 res://Scenes/Entities
 res://Scripts/Player
-res://Scenes/WorldScenes
 res://

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckabrt7ta4e0"]
+[gd_scene load_steps=12 format=4 uid="uid://ckabrt7ta4e0"]
 
 [ext_resource type="Texture2D" uid="uid://bnrp7dw6cm48q" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_bsbrc"]
 [ext_resource type="PackedScene" uid="uid://bcaucne5ubymj" path="res://Scenes/Entities/player.tscn" id="2_bvcvr"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://beljp71bxrs4y" path="res://assets/Parallax/1.png" id="3_w5y4x"]
 [ext_resource type="PackedScene" uid="uid://cal102pca2usg" path="res://Scenes/interactable/spikes.tscn" id="6_xo283"]
 [ext_resource type="PackedScene" uid="uid://bcnryb4ignyi1" path="res://Scenes/interactable/checkpoint.tscn" id="7_8soj4"]
+[ext_resource type="PackedScene" uid="uid://cqqo2tqymxa2" path="res://Scenes/WorldScenes/table.tscn" id="8_sqo0r"]
+[ext_resource type="PackedScene" uid="uid://1sx5ofign2rh" path="res://Scenes/Enemies/canon.tscn" id="9_kj54j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qkcf"]
 resource_name = "Terrain"
@@ -447,7 +449,25 @@ position = Vector2(83, 314)
 spawn_point = true
 
 [node name="Checkpoint2" parent="." instance=ExtResource("7_8soj4")]
-position = Vector2(507, 314)
+position = Vector2(1723, 314)
 
 [node name="Player" parent="." instance=ExtResource("2_bvcvr")]
 position = Vector2(333, 372)
+
+[node name="Table" parent="." instance=ExtResource("8_sqo0r")]
+position = Vector2(524, 360)
+
+[node name="Table2" parent="." instance=ExtResource("8_sqo0r")]
+position = Vector2(606, 324)
+
+[node name="Table3" parent="." instance=ExtResource("8_sqo0r")]
+position = Vector2(540, 280)
+
+[node name="Table4" parent="." instance=ExtResource("8_sqo0r")]
+position = Vector2(612, 232)
+
+[node name="Table5" parent="." instance=ExtResource("8_sqo0r")]
+position = Vector2(1932, 232)
+
+[node name="Canon" parent="." instance=ExtResource("9_kj54j")]
+position = Vector2(616, 372)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqqo2tqymxa2"]
+
+[ext_resource type="Texture2D" uid="uid://bo5nmnwwrdjgj" path="res://assets/Pirate Bomb/Sprites/7-Objects/12-Other Objects/Table.png" id="1_ntld3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4806y"]
+size = Vector2(80, 4)
+
+[node name="Table" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ntld3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_4806y")
+one_way_collision = true
+one_way_collision_margin = 5.0

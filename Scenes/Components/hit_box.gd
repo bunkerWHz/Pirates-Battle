@@ -5,7 +5,8 @@ extends Area2D
 
 func _ready() -> void:
 	monitoring = false
-
+	if owner is not Player:
+		set_collision_layer_value(4, true)
 func set_damage(value: float) -> void:
 	damage = value
 	
