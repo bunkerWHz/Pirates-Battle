@@ -178,14 +178,6 @@ texture_region_size = Vector2i(32, 32)
 7:3/0/terrains_peering_bit/left_side = 0
 7:3/0/terrains_peering_bit/top_left_corner = 0
 7:3/0/terrains_peering_bit/top_side = 0
-9:3/0 = 0
-9:3/0/terrain_set = 0
-9:3/0/terrain = 0
-9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-9:3/0/terrains_peering_bit/right_side = 0
-9:3/0/terrains_peering_bit/bottom_side = 0
-9:3/0/terrains_peering_bit/bottom_left_corner = 0
-9:3/0/terrains_peering_bit/left_side = 0
 10:3/0 = 0
 10:3/0/terrain_set = 0
 10:3/0/terrain = 0
@@ -298,11 +290,6 @@ texture_region_size = Vector2i(32, 32)
 4:4/0/terrain_set = 0
 4:4/0/terrain = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:0/0/terrains_peering_bit/bottom_side = 0
 4:1/0 = 0
 4:1/0/terrain_set = 0
 4:1/0/terrain = 0
@@ -337,15 +324,6 @@ texture_region_size = Vector2i(32, 32)
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/top_side = 0
 0:2/0/terrains_peering_bit/top_right_corner = 0
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0/terrains_peering_bit/right_side = 0
-1:0/0/terrains_peering_bit/bottom_right_corner = 0
-1:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0/terrains_peering_bit/bottom_left_corner = 0
-1:0/0/terrains_peering_bit/left_side = 0
 1:1/0 = 0
 1:1/0/terrain_set = 0
 1:1/0/terrain = 0
@@ -367,13 +345,6 @@ texture_region_size = Vector2i(32, 32)
 1:2/0/terrains_peering_bit/top_left_corner = 0
 1:2/0/terrains_peering_bit/top_side = 0
 1:2/0/terrains_peering_bit/top_right_corner = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/bottom_left_corner = 0
-2:0/0/terrains_peering_bit/left_side = 0
 2:1/0 = 0
 2:1/0/terrain_set = 0
 2:1/0/terrain = 0
@@ -390,6 +361,29 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/terrains_peering_bit/left_side = 0
 2:2/0/terrains_peering_bit/top_left_corner = 0
 2:2/0/terrains_peering_bit/top_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_bxvbu"]
 tile_size = Vector2i(32, 32)
@@ -429,6 +423,7 @@ repeat_size = Vector2(576, 0)
 repeat_times = 3
 
 [node name="Clouds" type="Sprite2D" parent="Parallax/Parallax2D3"]
+position = Vector2(0, 5)
 texture = ExtResource("3_f0wfe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -451,9 +446,6 @@ spawn_point = true
 [node name="Checkpoint2" parent="." instance=ExtResource("7_8soj4")]
 position = Vector2(1723, 314)
 
-[node name="Player" parent="." instance=ExtResource("2_bvcvr")]
-position = Vector2(333, 372)
-
 [node name="Table" parent="." instance=ExtResource("8_sqo0r")]
 position = Vector2(524, 360)
 
@@ -471,3 +463,6 @@ position = Vector2(1932, 232)
 
 [node name="Canon" parent="." instance=ExtResource("9_kj54j")]
 position = Vector2(616, 372)
+
+[node name="Player" parent="." instance=ExtResource("2_bvcvr")]
+position = Vector2(333, 372)

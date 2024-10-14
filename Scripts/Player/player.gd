@@ -5,6 +5,7 @@ class_name Player
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var hit_box: HitBox = $HitBox
+@onready var collision: CollisionShape2D = $HitBox/CollisionShape2D
 
 @export var speed : float = 200
 @export var jump_height : float = -300
@@ -21,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	current_health = max_health
+	collision.call_deferred("set","disabled",true)
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("left","right")
