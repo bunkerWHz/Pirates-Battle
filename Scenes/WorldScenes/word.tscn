@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cce8i44nvc7fr"]
+
+[ext_resource type="PackedScene" uid="uid://ckabrt7ta4e0" path="res://Scenes/WorldScenes/level1.tscn" id="1_4yijg"]
+[ext_resource type="Script" path="res://Scenes/WorldScenes/ui_manager.gd" id="1_67xjn"]
+
+[node name="Word" type="Node2D"]
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("1_67xjn")
+
+[node name="PauseMenu" type="ColorRect" parent="UIManager"]
+custom_minimum_size = Vector2(120, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.249475, 0.162473, 0.649895, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/PauseMenu"]
+custom_minimum_size = Vector2(120, 140)
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ResumeBTN" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RestartBTN" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Restart"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="WorldMapBTN" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "World Map"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UIManager/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ExitGameBTN" type="Button" parent="UIManager/PauseMenu/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" parent="Levels" instance=ExtResource("1_4yijg")]
+
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer/ResumeBTN" to="UIManager" method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer2/RestartBTN" to="UIManager" method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer3/WorldMapBTN" to="UIManager" method="_on_world_map_btn_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/HBoxContainer4/ExitGameBTN" to="UIManager" method="_on_exit_game_btn_pressed"]

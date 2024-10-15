@@ -25,3 +25,7 @@ func _physics_process(delta: float) -> void:
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body is Player:
 		take_damage(1)
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

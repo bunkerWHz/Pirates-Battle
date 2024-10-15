@@ -1,5 +1,6 @@
-res://Scenes/WorldScenes/level1.tscn
 res://addons/panku_console/res/panku_console_theme.tres
+res://Scenes/WorldScenes/word.tscn
+res://Scenes/WorldScenes/level1.tscn
 res://Scenes/Entities/player.tscn
 res://Scenes/interactable/checkpoint.tscn
 res://Scenes/Components/health_component.tscn
@@ -7,4 +8,6 @@ res://Scenes/interactable/spikes.tscn
 res://Scenes/WorldScenes/table.tscn
 res://Scenes/Enemies/canon.tscn
 res://Scenes/Enemies/cannon_ball.tscn
-res://Scripts/Enemies/canon.gd
+res://Scenes/Enemies/cannon_ball.gd
+res://Scenes/WorldScenes/ui_manager.gd
+res://Scripts/GM.gd

@@ -1,4 +1,10 @@
+Button
+HBoxContainer
+VBoxContainer
+ColorRect
+Node2D
 Timer
+CanvasLayer
 TileMapLayer
 CollisionShape2D
 HurtBox
@@ -7,9 +13,3 @@ HitBox
 Sprite2D
 Marker2D
 Area2D
-StaticBody2D
-Node2D
-PointLight2D
-HealthComponent
-ProgressBar
-CollisionPolygon2D

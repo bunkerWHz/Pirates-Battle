@@ -89,8 +89,9 @@ script = ExtResource("1_ioaet")
 texture = ExtResource("3_wcvdr")
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 9
 collision_mask = 0
+monitoring = false
 script = ExtResource("2_wt5r8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
@@ -104,10 +105,16 @@ libraries = {
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 33
+collision_mask = 32
+monitorable = false
 script = ExtResource("11_xnkor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_x4c2m")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
