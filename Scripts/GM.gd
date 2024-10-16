@@ -1,6 +1,10 @@
 extends Node
 
 var current_checkpoint: Checkpoint
+
+
+
+
 var is_paused : bool = false
 var pause_menu
 var map: String
