@@ -1,12 +1,8 @@
-res://Scenes/WorldScenes/word.tscn
-res://addons/panku_console/res/panku_console_theme.tres
-res://Scenes/WorldScenes/level1.tscn
 res://Scenes/Entities/player.tscn
+res://addons/panku_console/res/panku_console_theme.tres
+res://Scripts/Player/player.gd
+res://Scenes/WorldScenes/word.tscn
+res://Scenes/WorldScenes/level1.tscn
 res://Scenes/WorldScenes/base_camp.tscn
 res://Scenes/Entities/she.tscn
 res://Scenes/UI/world_map.tscn
-res://Scripts/GM.gd
-res://Scripts/Player/player.gd
-res://Scenes/WorldScenes/base_camp.gd
-res://Scenes/WorldScenes/ui_manager.gd
-res://Scenes/UI/world_map.gd

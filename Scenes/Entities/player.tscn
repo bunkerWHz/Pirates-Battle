@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bcaucne5ubymj"]
+[gd_scene load_steps=30 format=3 uid="uid://bcaucne5ubymj"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_2ilav"]
 [ext_resource type="Texture2D" uid="uid://bfnfeavwhrxfy" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_dbj00"]
@@ -18,17 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://dgbh7dfoqoq7m" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="14_svjxc"]
 [ext_resource type="Texture2D" uid="uid://cjqmad0htdhrq" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="15_utm07"]
 [ext_resource type="Script" path="res://Scenes/Components/health_component.gd" id="16_k01cx"]
+[ext_resource type="Texture2D" uid="uid://3tg7ao0efuvp" path="res://assets/generated/Designer.png" id="19_j50wh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg7jg"]
 size = Vector2(20, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kd4"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mgjc"]
 size = Vector2(20, 28)
 
-[sub_resource type="Animation" id="Animation_x54l8"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_3yt80"]
+resource_name = "attack1"
+length = 0.1
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,7 +40,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_dbj00")]
+"values": [ExtResource("15_utm07")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponSlot/Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, -16), Vector2(20, 5), Vector2(2, -16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeaponSlot/Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.453786, 1.74533, -0.453786]
 }
 
 [sub_resource type="Animation" id="Animation_reern"]
@@ -115,7 +152,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_51adu"]
 _data = {
-"RESET": SubResource("Animation_x54l8"),
+"attack1": SubResource("Animation_3yt80"),
 "fall": SubResource("Animation_reern"),
 "idle": SubResource("Animation_hnk2b"),
 "jump": SubResource("Animation_4d0uq"),
@@ -125,11 +162,15 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3fpp"]
 size = Vector2(30, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kd4"]
+size = Vector2(33, 20)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(333, 332)
 collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_2ilav")
+attacking = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dbj00")
@@ -137,17 +178,6 @@ texture = ExtResource("2_dbj00")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_kg7jg")
-
-[node name="HitBox" type="Area2D" parent="."]
-position = Vector2(20, 2)
-collision_layer = 20
-collision_mask = 0
-monitoring = false
-script = ExtResource("3_1owir")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-visible = false
-shape = SubResource("RectangleShape2D_w7kd4")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -181,6 +211,27 @@ collision_mask = 2
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_i3fpp")
 debug_color = Color(0.376146, 0.619485, 1, 0.42)
+
+[node name="WeaponSlot" type="Node2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="WeaponSlot"]
+position = Vector2(20, 2)
+collision_layer = 20
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_1owir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponSlot/HitBox"]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_w7kd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponSlot"]
+z_index = -1
+texture_filter = 2
+position = Vector2(2, -16)
+rotation = -0.453786
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("19_j50wh")
 
 [connection signal="area_entered" from="InteractableArea" to="." method="_on_interactable_area_area_entered"]
 [connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]
