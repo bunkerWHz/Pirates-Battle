@@ -1,9 +1,10 @@
+res://Scenes/UI
+res://Scenes/Entities
 res://Scenes/WorldScenes
 res://Scenes/Enemies
 res://Scripts/Enemies
 res://Scripts
 res://Scenes/interactable
 res://Scenes/Components
-res://Scenes/Entities
 res://Scripts/Player
 res://

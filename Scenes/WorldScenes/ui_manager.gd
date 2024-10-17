@@ -1,11 +1,15 @@
 extends CanvasLayer
 
 @onready var pause_menu: ColorRect = $PauseMenu
+@onready var world_map: TextureRect = $ScrollContainer/WorldMap
+
 var index : int = 0
+
 func _ready() -> void:
 	pause_menu.hide()
+	world_map.hide()
 	GM.pause_menu = pause_menu
-	
+	GM.world_map = world_map
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
@@ -40,7 +44,7 @@ func _on_restart_btn_pressed() -> void:
 	GM.restart()
 
 func _on_world_map_btn_pressed() -> void:
-	GM.load_word()
+	GM.load_world()
 
 func _on_exit_game_btn_pressed() -> void:
 	GM.exit_game()

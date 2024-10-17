@@ -2,12 +2,12 @@ extends Node
 
 var current_checkpoint: Checkpoint
 
-
-
-
+var world
 var is_paused : bool = false
 var pause_menu
-var map: String
+var player
+var world_map
+var current_scene = preload("res://Scenes/WorldScenes/base_camp.tscn").instantiate()
 
 func pause_unpause():
 	is_paused = !is_paused
@@ -24,8 +24,8 @@ func restart():
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 
-func load_word():
-	get_tree().change_scene_to_file(map)
-	
+func load_world():
+	GM.world.add_child(current_scene)
+
 func exit_game():
 	get_tree().quit()

@@ -17,10 +17,12 @@ var current_health
 var object: Area2D
 
 var direction
-		
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
+	GM.player = self
+	z_index = 1
 	current_health = max_health
 	collision.call_deferred("set","disabled",true)
 
@@ -63,11 +65,9 @@ func update_animation()->void:
 func take_damage(taken_damage) -> void:
 	health_component.take_damage(taken_damage)
 
-#func _on_hurt_box_area_entered(_area: Area2D) -> void:
-	#pass
-
 func interact() -> void:
 	if object != null:
+		print(object)
 		object.owner.interact()
 	
 func _on_interactable_area_area_entered(area: Area2D) -> void:

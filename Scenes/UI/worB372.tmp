@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvac16n6oqrbr"]
+
+[ext_resource type="Texture2D" uid="uid://dnh8q7oqem8kt" path="res://assets/generated/map.png" id="1_833wm"]
+[ext_resource type="Script" path="res://Scenes/UI/world_map.gd" id="2_e7prb"]
+
+[node name="WorldMap" type="TextureRect"]
+texture_filter = 1
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("1_833wm")
+stretch_mode = 4
+script = ExtResource("2_e7prb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(958, 615, 960, 712, 1002, 803, 1113, 769, 1180, 760, 1325, 672, 1340, 579, 1243, 551, 1153, 571, 1014, 555)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
